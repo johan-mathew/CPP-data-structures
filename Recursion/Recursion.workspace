@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="Recursion" Database="" Version="10000">
+  <Project Name="sumofnaturalnumbers" Path="sumofnaturalnumbers/sumofnaturalnumbers.project" Active="No"/>
+  <Project Name="factorial" Path="factorial/factorial.project" Active="No"/>
+  <Project Name="Power" Path="Power/Power.project" Active="No"/>
+  <Project Name="TaylorSeries" Path="TaylorSeries/TaylorSeries.project" Active="No"/>
+  <Project Name="TaylorSeriesusing_Honors_Method" Path="TaylorSeriesusing_Honors_Method/TaylorSeriesusing_Honors_Method.project" Active="No"/>
+  <Project Name="Fibonacci_using_memoization" Path="Fibonacci_using_memoization/Fibonacci_using_memoization.project" Active="No"/>
+  <Project Name="nCr" Path="nCr/nCr.project" Active="No"/>
+  <Project Name="Tower_of_Hanoi" Path="Tower_of_Hanoi/Tower_of_Hanoi.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Environment/>
+      <Project Name="sumofnaturalnumbers" ConfigName="Debug"/>
+      <Project Name="factorial" ConfigName="Debug"/>
+      <Project Name="Power" ConfigName="Debug"/>
+      <Project Name="TaylorSeries" ConfigName="Debug"/>
+      <Project Name="TaylorSeriesusing_Honors_Method" ConfigName="Debug"/>
+      <Project Name="Fibonacci_using_memoization" ConfigName="Debug"/>
+      <Project Name="nCr" ConfigName="Debug"/>
+      <Project Name="Tower_of_Hanoi" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Environment/>
+      <Project Name="sumofnaturalnumbers" ConfigName="Release"/>
+      <Project Name="factorial" ConfigName="Release"/>
+      <Project Name="Power" ConfigName="Release"/>
+      <Project Name="TaylorSeries" ConfigName="Release"/>
+      <Project Name="TaylorSeriesusing_Honors_Method" ConfigName="Release"/>
+      <Project Name="Fibonacci_using_memoization" ConfigName="Release"/>
+      <Project Name="nCr" ConfigName="Release"/>
+      <Project Name="Tower_of_Hanoi" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>

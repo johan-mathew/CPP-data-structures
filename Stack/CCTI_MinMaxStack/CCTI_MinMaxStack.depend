@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1596293837 source:k:\c++ programming\stack\ccti_minmaxstack\main.cpp
+	<iostream>
+	<stack>
+

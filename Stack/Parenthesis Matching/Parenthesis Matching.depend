@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1595842562 source:k:\c++ programming\stack\parenthesis matching\main.cpp
+	<iostream>
+	<Stack>
+	<bits/stdc++.h>
+

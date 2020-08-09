@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1595848105 source:k:\c++ programming\stack\infix_to_postfix\main.cpp
+	<iostream>
+	<Stack>
+	<String>
+
