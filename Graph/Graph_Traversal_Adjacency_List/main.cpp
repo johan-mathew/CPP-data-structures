@@ -1,109 +1,64 @@
 #include <iostream>
 #include <queue>
-#include <stack>
 #include <vector>
+#include <list>
 using namespace std;
-class Node{
-public:
-    int vertex;
-    Node* link;
-};
-void newedge(vector<Node*> &G, int vertex1, int vertex2){
-Node *p;
-Node* newedge1 = new Node();
-newedge1->vertex = vertex1;
-newedge1->link = nullptr;
-p = G.at(vertex2);
-if(G.at(vertex2) == nullptr){
-    G.at(vertex2) = newedge1;
+void newedge(vector<list<int>> &G, int vertex1, int vertex2){
+    G.at(vertex1).push_back(vertex2);
+    G.at(vertex2).push_back(vertex1);
 }
-
-else{
-    while(p->link)
-        p=p->link;
-    p->link = newedge1;
-}
-Node* newedge2 = new Node();
-newedge2->vertex = vertex2;
-newedge2->link = nullptr;
-p = G.at(vertex1);
-if(G.at(vertex1) == nullptr)
-    G.at(vertex1) = newedge2;
-else{
-    while(p->link)
-        p=p->link;
-    p->link = newedge2;
-}
-}
-
-void PrintList(vector<Node*> G){
-Node* p;
-for(size_t i = 0; i<G.size(); i++){
-    p = G.at(i);
-    cout<<i<<": ";
-    while(p)
-    {
-        cout<<p->vertex<<" ";
-        p = p->link;
+void PrintList(vector<list<int>> G){
+    for(size_t i = 0; i < G.size(); i++){
+        cout<<i<<" : ";
+        for(auto l : G.at(i))
+            cout<<l<<" ";
+        cout<<endl;
     }
-    cout<<endl;
 }
+void DFS(vector<list<int>> G,int node){
+    static vector<bool> visited(6,false);
+    if(!visited.at(node)){
+        visited.at(node) = true;
+        cout<<node<<" ";
+        for(auto l : G.at(node))
+            DFS(G,l);
+    }
 }
-void DFS(vector<Node*> G,int node){
-Node* s;
-static vector<bool> visited(7,false);
-            cout<<node<<" ";
-            visited.at(node) = true;
-            s = G.at(node);
-            while(s){
-                if(!visited.at(s->vertex))
-                    DFS(G,s->vertex);
-                s=s->link;
+void BFS(vector<list<int>> G, int node){
+    vector<bool> visited(6,false);
+    queue<int> q;
+    int x;
+        cout<<node<<" ";
+        visited.at(node) = true;
+        q.push(node);
+        while(!q.empty()){
+            x = q.front();
+            q.pop();
+            for(auto l : G.at(x)){
+                if(!visited.at(l)){
+                cout<<l<<" ";
+                visited.at(l) = true;
+                q.push(l);
+                }
             }
-}
-void BFS(vector<Node*> &G, int node){
-
-Node *s;
-queue<int> q;
-vector<bool> visited(7,false);
-cout<<node<<" ";
-visited.at(node) = true;
-q.push(node);
-while(!q.empty()){
-    s = G.at(q.front());
-    q.pop();
-    while(s){
-        if(!visited.at(s->vertex))
-        {
-            visited.at(s->vertex) = true;
-            cout<<s->vertex<<" ";
-            q.push(s->vertex);
         }
-        s=s->link;
     }
-}
-
-
-}
 int main()
 {
-    vector<Node*> G;
-    Node* g;
-    g = nullptr;
-    for (int i = 1; i< 8; i++){
-        G.push_back(g);
-    }
-    newedge(G,1,2);
+    list<int> l;
+    vector<list<int>> G(6,l);
+    newedge(G,0,1);
+    newedge(G,0,2);
     newedge(G,1,3);
-    newedge(G,2,4);
-    newedge(G,2,5);
+    newedge(G,1,4);
+    newedge(G,2,3);
     newedge(G,3,4);
+    newedge(G,3,5);
     newedge(G,4,5);
-    newedge(G,4,6);
-    newedge(G,5,6);
     PrintList(G);
-    cout<<endl<<"DFS :";
-    DFS(G,1);
-    cout<<endl<<"BFS :";
-    BFS(G,1);
+    cout<<"DFS : ";
+    DFS(G,0);
+    cout<<endl<<"BFS : ";
+    BFS(G,0);
+    return 0;
 }
