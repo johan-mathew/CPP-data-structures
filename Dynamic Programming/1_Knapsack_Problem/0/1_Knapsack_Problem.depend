@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1601988794 source:k:\github\cpp-data-structures\dynamic programming\1_knapsack_problem\0\main.cpp
+	<iostream>
+	<algorithm>
+
